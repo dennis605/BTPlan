@@ -12,8 +12,8 @@ Begin Form
     Width =10197
     DatasheetFontHeight =11
     ItemSuffix =42
-    Right =24825
-    Bottom =11685
+    Right =21225
+    Bottom =11670
     DatasheetGridlinesColor =15132391
     RecordSource ="tblVeranstaltung"
     Caption ="Veranstaltung erstellen"
@@ -90,6 +90,24 @@ Begin Form
             BorderThemeColorIndex =1
             BorderShade =65.0
             ThemeFontIndex =1
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin ListBox
+            BorderLineStyle =0
+            Width =1701
+            Height =1417
+            LabelX =-1701
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             ForeThemeColorIndex =0
             ForeTint =75.0
             GridlineThemeColorIndex =1
@@ -240,7 +258,7 @@ Begin Form
                     Width =5393
                     Height =330
                     ColumnWidth =1620
-                    TabIndex =3
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="fldVeranstaltungAnfang"
@@ -296,7 +314,7 @@ Begin Form
                     Width =5393
                     Height =330
                     ColumnWidth =1620
-                    TabIndex =4
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="fldVeranstaltungEnde"
@@ -350,63 +368,7 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =4770
-                    Top =2828
-                    Width =5393
-                    Height =600
-                    ColumnWidth =3000
-                    TabIndex =5
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="fldVeranstaltungOrt"
-                    ControlSource ="txtVeranstaltungOrt"
-                    GroupTable =2
-                    BottomPadding =150
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4770
-                    LayoutCachedTop =2828
-                    LayoutCachedWidth =10163
-                    LayoutCachedHeight =3428
-                    RowStart =6
-                    RowEnd =6
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =2
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            Left =60
-                            Top =2828
-                            Width =4643
-                            Height =600
-                            BorderColor =8355711
-                            ForeColor =8355711
-                            Name ="fldVeranstaltungOrt_Bezeichnungsfeld"
-                            Caption ="Ort der Veranstaltung"
-                            GroupTable =2
-                            BottomPadding =150
-                            GridlineColor =10921638
-                            LayoutCachedLeft =60
-                            LayoutCachedTop =2828
-                            LayoutCachedWidth =4703
-                            LayoutCachedHeight =3428
-                            RowStart =6
-                            RowEnd =6
-                            LayoutGroup =1
-                            GroupTable =2
-                        End
-                    End
-                End
-                Begin TextBox
-                    EnterKeyBehavior = NotDefault
-                    ScrollBars =2
-                    OverlapFlags =85
-                    TextAlign =1
-                    IMESentenceMode =3
-                    Left =4770
-                    Top =3615
+                    Top =3308
                     Width =5393
                     Height =1140
                     ColumnWidth =3000
@@ -420,9 +382,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4770
-                    LayoutCachedTop =3615
+                    LayoutCachedTop =3308
                     LayoutCachedWidth =10163
-                    LayoutCachedHeight =4755
+                    LayoutCachedHeight =4448
                     RowStart =7
                     RowEnd =7
                     ColumnStart =1
@@ -434,7 +396,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =60
-                            Top =3615
+                            Top =3308
                             Width =4643
                             Height =1140
                             BorderColor =8355711
@@ -445,9 +407,9 @@ Begin Form
                             BottomPadding =150
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =3615
+                            LayoutCachedTop =3308
                             LayoutCachedWidth =4703
-                            LayoutCachedHeight =4755
+                            LayoutCachedHeight =4448
                             RowStart =7
                             RowEnd =7
                             LayoutGroup =1
@@ -706,6 +668,67 @@ Begin Form
                     WebImagePaddingRight =3
                     WebImagePaddingBottom =3
                     Overlaps =1
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =4770
+                    Top =2828
+                    Width =5393
+                    Height =293
+                    TabIndex =3
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"0\";\"0\""
+                    Name ="fldVeranstaltungOrt"
+                    ControlSource ="Veranstaltungsort"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; "
+                    ColumnWidths ="0;2835"
+                    BaseInfo ="\"SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; \";\"tblOrt\";\"\";\"ID\""
+                        ";\"NameOrt\";\"PrimaryKey\""
+                    GroupTable =2
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4770
+                    LayoutCachedTop =2828
+                    LayoutCachedWidth =10163
+                    LayoutCachedHeight =3121
+                    RowStart =6
+                    RowEnd =6
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                    GroupTable =2
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =60
+                            Top =2828
+                            Width =4643
+                            Height =293
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="fldVeranstaltungOrt_Bezeichnungsfeld"
+                            Caption ="Ort der Veranstaltung"
+                            GroupTable =2
+                            BottomPadding =150
+                            GridlineColor =10921638
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =2828
+                            LayoutCachedWidth =4703
+                            LayoutCachedHeight =3121
+                            RowStart =6
+                            RowEnd =6
+                            LayoutGroup =1
+                            GroupTable =2
+                        End
+                    End
                 End
             End
         End
