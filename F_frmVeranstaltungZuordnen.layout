@@ -10,10 +10,15 @@ Begin Form
     Width =16260
     DatasheetFontHeight =11
     ItemSuffix =100
-    Right =14370
+    Right =21480
     Bottom =11670
     DatasheetGridlinesColor =15132391
-    RecordSource ="tblVeranstaltung"
+    RecordSource ="SELECT tblVeranstaltung.idVeranstaltung, tblVeranstaltung.txtVeranstaltungName, "
+        "tblVeranstaltung.dateVeranstaltungDatum, tblVeranstaltung.dateVeranstaltungAnfan"
+        "g, tblVeranstaltung.dateVeranstaltungEnde, tblVeranstaltung.txtVeranstaltungBeme"
+        "rkung, tblVeranstaltung.Ort, tblVeranstaltung.Veranstaltungsort, tblOrt.ID, tblO"
+        "rt.NameOrt FROM tblOrt INNER JOIN tblVeranstaltung ON tblOrt.ID = tblVeranstaltu"
+        "ng.Veranstaltungsort; "
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
@@ -924,6 +929,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
@@ -978,6 +984,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
@@ -1031,6 +1038,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Enabled = NotDefault
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
@@ -1042,7 +1050,7 @@ Begin Form
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtVeranstaltungOrt"
-                    ControlSource ="txtVeranstaltungOrt"
+                    ControlSource ="NameOrt"
                     GroupTable =1
                     BottomPadding =150
                     GridlineColor =10921638

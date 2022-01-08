@@ -8,6 +8,8 @@ Option Explicit
 
 'Dim veranstaltungNameOK, veranstaltungAnfangOK, veranstaltungEndeOK, veranstaltungOrtOK As Boolean
 
+Private blnGood As Boolean
+
 Private Sub btnLoeschen_Click()
 
     'Wenn nicht neuer Eintrag
@@ -35,6 +37,14 @@ Private Sub btnLoeschen_Click()
 
 End Sub
 
+Private Sub btnSpeichern_Click()
+
+blnGood = True
+    Call DoCmd.RunCommand(acCmdSaveRecord)
+    blnGood = False
+
+End Sub
+
 Private Sub dateVeranstaltungAnfang_GotFocus()
 Debug.Print Me.dateVeranstaltungAnfang.TextAlign
     'Me.dateVeranstaltungAnfang.SetFocus
@@ -47,4 +57,17 @@ Private Sub dateVeranstaltungEnde_BeforeUpdate(Cancel As Integer)
         Me.dateVeranstaltungEnde.Undo
         Cancel = True
     End If
+End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+
+'Dim strMsg As String
+'
+'    If Not blnGood Then
+'        Cancel = True
+'        strMsg = "Please use the Save button to save your changes," & _
+'                 vbNewLine & "or Escape to reset them."
+'        Call MsgBox(Prompt:=strMsg, Title:="Before Update")
+'    End If
+
 End Sub

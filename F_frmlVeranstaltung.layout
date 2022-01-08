@@ -14,6 +14,7 @@ Begin Form
     Bottom =11670
     DatasheetGridlinesColor =15132391
     RecordSource ="tblVeranstaltung"
+    BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     AllowDatasheetView =0
     FilterOnLoad =0
@@ -895,47 +896,9 @@ Begin Form
                     ForeColor =4210752
                     Name ="btnSpeichern"
                     Caption ="Speichern"
+                    OnClick ="[Event Procedure]"
                     GroupTable =3
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =0
-                        Begin
-                            Action ="OnError"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="RunCommand"
-                            Argument ="97"
-                        End
-                        Begin
-                            Condition ="[MacroError]<>0"
-                            Action ="MsgBox"
-                            Argument ="=[MacroError].[Description]"
-                            Argument ="-1"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="RunCommand"
-                            Argument ="18"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"btnSpeichern\" Event=\"OnClick\" xmlns=\"http://schemas.micr"
-                                "osoft.com/office/accessservices/2009/11/application\"><Statements><Action Name=\""
-                                "OnError\"/><Action Name=\"SaveRec"
-                        End
-                        Begin
-                            Comment ="_AXL:ord\"/><ConditionalBlock><If><Condition>[MacroError]&lt;&gt;0</Condition><S"
-                                "tatements><Action Name=\"MessageBox\"><Argument Name=\"Message\">=[MacroError].["
-                                "Description]</Argument></Action></Statements></If></ConditionalBlock><Action Nam"
-                                "e=\"RunMenuCommand\""
-                        End
-                        Begin
-                            Comment ="_AXL:><Argument Name=\"Command\">Refresh</Argument></Action></Statements></UserI"
-                                "nterfaceMacro>"
-                        End
-                    End
 
                     LayoutCachedLeft =2070
                     LayoutCachedTop =5100
