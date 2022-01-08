@@ -10,8 +10,8 @@ Begin Form
     Width =17007
     DatasheetFontHeight =11
     ItemSuffix =40
-    Right =25080
-    Bottom =11685
+    Right =21480
+    Bottom =11235
     DatasheetGridlinesColor =15132391
     RecordSource ="tblVeranstaltung"
     DatasheetFontName ="Calibri"
@@ -303,7 +303,7 @@ Begin Form
             BackThemeColorIndex =1
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
                     Left =3060
@@ -500,6 +500,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="dateVeranstaltungAnfang"
                     ControlSource ="dateVeranstaltungAnfang"
+                    Format ="Short Time"
                     InputMask ="00:00;0;_"
                     GroupTable =1
                     BottomPadding =150
@@ -562,6 +563,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="dateVeranstaltungEnde"
                     ControlSource ="dateVeranstaltungEnde"
+                    Format ="Short Time"
                     InputMask ="00:00;0;_"
                     GroupTable =1
                     BottomPadding =150
@@ -719,24 +721,6 @@ Begin Form
                     LayoutCachedTop =340
                     LayoutCachedWidth =16438
                     LayoutCachedHeight =4705
-                    Begin
-                        Begin Label
-                            OverlapFlags =247
-                            Left =5669
-                            Top =340
-                            Width =1590
-                            Height =320
-                            BorderColor =8355711
-                            ForeColor =6710886
-                            Name ="lstVeranstaltung_Bezeichnungsfeld"
-                            Caption ="lstVeranstaltung"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =5669
-                            LayoutCachedTop =340
-                            LayoutCachedWidth =7259
-                            LayoutCachedHeight =660
-                        End
-                    End
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
