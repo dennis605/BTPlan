@@ -347,7 +347,6 @@ Begin Form
                     ForeColor =4210752
                     Name ="idVeranstaltung"
                     ControlSource ="idVeranstaltung"
-                    BeforeUpdate ="[Event Procedure]"
                     GroupTable =1
                     BottomPadding =150
                     GridlineColor =10921638
@@ -718,7 +717,7 @@ Begin Form
                     TabIndex =7
                     ForeColor =4210752
                     BorderColor =10921638
-                    Name ="Liste29"
+                    Name ="lstVeranstaltung"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblVeranstaltung.idVeranstaltung, tblVeranstaltung.txtVeranstaltungName A"
                         "S Veranstaltung, tblVeranstaltung.dateVeranstaltungDatum AS Datum, tblVeranstalt"
@@ -740,13 +739,13 @@ Begin Form
                         End
                         Begin
                             Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"Liste29\" xmlns=\"http://schemas.microsoft.com/office/access"
-                                "services/2009/11/application\"><Statements><Action Name=\"SearchForRecord\"><Arg"
-                                "ument Name=\"WhereCondition\">=\"["
+                                "nterfaceMacro For=\"lstVeranstaltung\" xmlns=\"http://schemas.microsoft.com/offi"
+                                "ce/accessservices/2009/11/application\"><Statements><Action Name=\"SearchForReco"
+                                "rd\"><Argument Name=\"WhereCondi"
                         End
                         Begin
-                            Comment ="_AXL:idVeranstaltung] = \" &amp; Str(Nz(Screen.ActiveControl,0))</Argument></Act"
-                                "ion></Statements></UserInterfaceMacro>"
+                            Comment ="_AXL:tion\">=\"[idVeranstaltung] = \" &amp; Str(Nz(Screen.ActiveControl,0))</Arg"
+                                "ument></Action></Statements></UserInterfaceMacro>"
                         End
                     End
 

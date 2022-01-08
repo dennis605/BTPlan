@@ -6,22 +6,23 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
-Dim veranstaltungNameOK, veranstaltungAnfangOK, veranstaltungEndeOK, veranstaltungOrtOK As Boolean
+'Dim veranstaltungNameOK, veranstaltungAnfangOK, veranstaltungEndeOK, veranstaltungOrtOK As Boolean
 
 Private Sub btnLoeschen_Click()
 
-    '
+    'Wenn nicht neuer Eintrag
     If Form.newRecord = False Then
 
-        'Application.DisplayAlerts = False
+        'Warnung unterdrücken
         DoCmd.SetWarnings False
     
         If MsgBox("Veranstaltung löschen?" & vbCrLf & _
-                  "Soll die Veranstaltung" & Me.txtVeranstaltungName & "  gelöscht werden?", vbYesNo, "Veranstaltung löschen") = vbYes Then
+                  "Soll die Veranstaltung: " & vbCrLf & vbCrLf & Me.txtVeranstaltungName & vbCrLf & vbCrLf & "gelöscht werden?", vbYesNo, "Veranstaltung löschen") = vbYes Then
             DoCmd.RunCommand acCmdDeleteRecord
             DoCmd.SetWarnings True
             Form.Refresh
             DoCmd.GoToRecord , , acLast
+            'Me.lstVeranstaltung.SetFocus
         End If
 
     End If
@@ -35,17 +36,15 @@ Private Sub btnLoeschen_Click()
 End Sub
 
 Private Sub dateVeranstaltungAnfang_GotFocus()
-    Me.dateVeranstaltungAnfang.SetFocus
-    Me.dateVeranstaltungAnfang.SelStart = 1
+Debug.Print Me.dateVeranstaltungAnfang.TextAlign
+    'Me.dateVeranstaltungAnfang.SetFocus
+    Me.dateVeranstaltungAnfang.SelStart = 4
 End Sub
 
 Private Sub dateVeranstaltungEnde_BeforeUpdate(Cancel As Integer)
     If Me.dateVeranstaltungEnde < Me.dateVeranstaltungAnfang Then
         MsgBox "Ende für Veranstaltung muss vor Anfang sein - Bitte korrigieren"
+        Me.dateVeranstaltungEnde.Undo
         Cancel = True
     End If
-End Sub
-
-Private Sub idVeranstaltung_BeforeUpdate(Cancel As Integer)
-
 End Sub
