@@ -10,7 +10,7 @@ Begin Form
     Width =12582
     DatasheetFontHeight =11
     ItemSuffix =35
-    Right =21225
+    Right =14370
     Bottom =11670
     DatasheetGridlinesColor =15132391
     RecordSource ="tblPersonal"

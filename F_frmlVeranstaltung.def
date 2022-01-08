@@ -6,18 +6,29 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
+Dim veranstaltungNameOK, veranstaltungAnfangOK, veranstaltungEndeOK, veranstaltungOrtOK As Boolean
+
 Private Sub btnLoeschen_Click()
 
-    'Application.DisplayAlerts = False
-    DoCmd.SetWarnings False
+    '
+    If Form.newRecord = False Then
+
+        'Application.DisplayAlerts = False
+        DoCmd.SetWarnings False
     
         If MsgBox("Veranstaltung löschen?" & vbCrLf & _
                   "Soll die Veranstaltung" & Me.txtVeranstaltungName & "  gelöscht werden?", vbYesNo, "Veranstaltung löschen") = vbYes Then
             DoCmd.RunCommand acCmdDeleteRecord
             DoCmd.SetWarnings True
             Form.Refresh
+            DoCmd.GoToRecord , , acLast
         End If
-'
+
+    End If
+
+    If Form.newRecord = True Then
+        Form.Undo
+    End If
     'Application.DisplayAlerts = False
     
 
@@ -26,4 +37,15 @@ End Sub
 Private Sub dateVeranstaltungAnfang_GotFocus()
     Me.dateVeranstaltungAnfang.SetFocus
     Me.dateVeranstaltungAnfang.SelStart = 1
+End Sub
+
+Private Sub dateVeranstaltungEnde_BeforeUpdate(Cancel As Integer)
+    If Me.dateVeranstaltungEnde < Me.dateVeranstaltungAnfang Then
+        MsgBox "Ende für Veranstaltung muss vor Anfang sein - Bitte korrigieren"
+        Cancel = True
+    End If
+End Sub
+
+Private Sub idVeranstaltung_BeforeUpdate(Cancel As Integer)
+
 End Sub

@@ -9,7 +9,7 @@ Begin Form
     GridY =10
     Width =17007
     DatasheetFontHeight =11
-    ItemSuffix =44
+    ItemSuffix =48
     Right =21480
     Bottom =11670
     DatasheetGridlinesColor =15132391
@@ -347,6 +347,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="idVeranstaltung"
                     ControlSource ="idVeranstaltung"
+                    BeforeUpdate ="[Event Procedure]"
                     GroupTable =1
                     BottomPadding =150
                     GridlineColor =10921638
@@ -426,6 +427,7 @@ Begin Form
                             Top =863
                             Width =2653
                             Height =563
+                            FontWeight =700
                             LeftMargin =44
                             TopMargin =22
                             RightMargin =44
@@ -433,7 +435,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld3"
-                            Caption ="txtVeranstaltungName"
+                            Caption ="Name Veranstaltung"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -554,6 +556,7 @@ Begin Form
                             Top =2138
                             Width =2653
                             Height =338
+                            FontWeight =700
                             LeftMargin =44
                             TopMargin =22
                             RightMargin =44
@@ -561,7 +564,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld9"
-                            Caption ="dateVeranstaltungAnfang"
+                            Caption ="Beginn Veranstaltung"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -594,6 +597,7 @@ Begin Form
                     Name ="dateVeranstaltungEnde"
                     ControlSource ="dateVeranstaltungEnde"
                     Format ="Short Time"
+                    BeforeUpdate ="[Event Procedure]"
                     InputMask ="00:00;0;_"
                     GroupTable =1
                     BottomPadding =150
@@ -612,11 +616,11 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            TextAlign =1
                             Left =338
                             Top =2663
                             Width =2653
                             Height =338
+                            FontWeight =700
                             LeftMargin =44
                             TopMargin =22
                             RightMargin =44
@@ -624,7 +628,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld12"
-                            Caption ="dateVeranstaltungEnde"
+                            Caption ="Ende Veranstaltung"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -687,7 +691,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld18"
-                            Caption ="txtVeranstaltungBemerkung"
+                            Caption ="Bemerkung"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -792,15 +796,15 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            TextAlign =1
                             Left =338
                             Top =3188
                             Width =2653
                             Height =338
+                            FontWeight =700
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld33"
-                            Caption ="Veranstaltungsort"
+                            Caption =" Veranstaltungsort"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -817,14 +821,15 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =566
-                    Top =5102
-                    Width =803
+                    Left =563
+                    Top =5100
+                    Width =1440
                     Height =338
                     TabIndex =8
                     ForeColor =4210752
                     Name ="btnAnlegen"
                     Caption ="Anlegen"
+                    GroupTable =3
                     GridlineColor =10921638
                     OnClickEmMacro = Begin
                         Version =196611
@@ -863,32 +868,35 @@ Begin Form
                         End
                     End
 
-                    LayoutCachedLeft =566
-                    LayoutCachedTop =5102
-                    LayoutCachedWidth =1369
-                    LayoutCachedHeight =5440
+                    LayoutCachedLeft =563
+                    LayoutCachedTop =5100
+                    LayoutCachedWidth =2003
+                    LayoutCachedHeight =5438
+                    LayoutGroup =3
                     BackColor =14461583
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
                     HoverForeColor =4210752
                     PressedForeColor =4210752
+                    GroupTable =3
                     WebImagePaddingLeft =4
                     WebImagePaddingTop =4
-                    WebImagePaddingRight =4
+                    WebImagePaddingRight =3
                     WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =1757
-                    Top =5159
-                    Width =945
+                    Left =2070
+                    Top =5100
+                    Width =1440
                     Height =338
                     TabIndex =9
                     ForeColor =4210752
                     Name ="btnSpeichern"
                     Caption ="Speichern"
+                    GroupTable =3
                     GridlineColor =10921638
                     OnClickEmMacro = Begin
                         Version =196611
@@ -930,16 +938,20 @@ Begin Form
                         End
                     End
 
-                    LayoutCachedLeft =1757
-                    LayoutCachedTop =5159
-                    LayoutCachedWidth =2702
-                    LayoutCachedHeight =5497
+                    LayoutCachedLeft =2070
+                    LayoutCachedTop =5100
+                    LayoutCachedWidth =3510
+                    LayoutCachedHeight =5438
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =3
                     BackColor =14461583
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
                     HoverForeColor =4210752
                     PressedForeColor =4210752
+                    GroupTable =3
                     WebImagePaddingLeft =4
                     WebImagePaddingTop =4
                     WebImagePaddingRight =3
@@ -948,27 +960,32 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2834
-                    Top =5159
-                    Width =788
+                    Left =3578
+                    Top =5100
+                    Width =1440
                     Height =338
                     TabIndex =10
                     ForeColor =4210752
                     Name ="btnLoeschen"
                     Caption ="Löschen"
                     OnClick ="[Event Procedure]"
+                    GroupTable =3
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2834
-                    LayoutCachedTop =5159
-                    LayoutCachedWidth =3622
-                    LayoutCachedHeight =5497
+                    LayoutCachedLeft =3578
+                    LayoutCachedTop =5100
+                    LayoutCachedWidth =5018
+                    LayoutCachedHeight =5438
+                    ColumnStart =2
+                    ColumnEnd =2
+                    LayoutGroup =3
                     BackColor =14461583
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
                     HoverForeColor =4210752
                     PressedForeColor =4210752
+                    GroupTable =3
                     WebImagePaddingLeft =4
                     WebImagePaddingTop =4
                     WebImagePaddingRight =3
@@ -977,14 +994,15 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =4025
-                    Top =5159
-                    Width =1080
+                    Left =5085
+                    Top =5100
+                    Width =1440
                     Height =338
                     TabIndex =11
                     ForeColor =4210752
                     Name ="btnDuplizieren"
                     Caption ="Duplizieren"
+                    GroupTable =3
                     GridlineColor =10921638
                     OnClickEmMacro = Begin
                         Version =196611
@@ -1065,16 +1083,20 @@ Begin Form
                         End
                     End
 
-                    LayoutCachedLeft =4025
-                    LayoutCachedTop =5159
-                    LayoutCachedWidth =5105
-                    LayoutCachedHeight =5497
+                    LayoutCachedLeft =5085
+                    LayoutCachedTop =5100
+                    LayoutCachedWidth =6525
+                    LayoutCachedHeight =5438
+                    ColumnStart =3
+                    ColumnEnd =3
+                    LayoutGroup =3
                     BackColor =14461583
                     BorderColor =14461583
                     HoverColor =15189940
                     PressedColor =9917743
                     HoverForeColor =4210752
                     PressedForeColor =4210752
+                    GroupTable =3
                     WebImagePaddingLeft =4
                     WebImagePaddingTop =4
                     WebImagePaddingRight =3
