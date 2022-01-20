@@ -123,7 +123,7 @@
       <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
       <Type name="Type" type="3" value="10"/>
       <Name name="Name" type="12" value="calcPersonalName"/>
-      <OrdinalPosition name="OrdinalPosition" type="3" value="3"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="4"/>
       <Size name="Size" type="4" value="243"/>
       <SourceField name="SourceField" type="12" value="calcPersonalName"/>
       <SourceTable name="SourceTable" type="12" value="tblPersonal"/>
@@ -136,7 +136,7 @@
       <Required name="Required" type="1" value="False"/>
       <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
       <AppendOnly name="AppendOnly" type="1" value="False"/>
-      <Expression name="Expression" type="12" value=""/>
+      <Expression name="Expression" type="12" value="[txtPersonalVorname]+' '+[txtPersonalNachname]"/>
       <FieldSize name="FieldSize" type="4"/>
       <OriginalValue name="OriginalValue" type="10"/>
       <VisibleValue name="VisibleValue" type="10"/>

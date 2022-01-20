@@ -122,7 +122,7 @@
       <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
       <Type name="Type" type="3" value="10"/>
       <Name name="Name" type="12" value="calcBewohnerName"/>
-      <OrdinalPosition name="OrdinalPosition" type="3" value="3"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="4"/>
       <Size name="Size" type="4" value="243"/>
       <SourceField name="SourceField" type="12" value="calcBewohnerName"/>
       <SourceTable name="SourceTable" type="12" value="tblBewohner"/>
@@ -135,12 +135,12 @@
       <Required name="Required" type="1" value="False"/>
       <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
       <AppendOnly name="AppendOnly" type="1" value="False"/>
-      <Expression name="Expression" type="12" value=""/>
+      <Expression name="Expression" type="12" value="[txtBewohnerVorname]+' '+[txtBewohnerNachname]"/>
       <FieldSize name="FieldSize" type="4"/>
       <OriginalValue name="OriginalValue" type="10"/>
       <VisibleValue name="VisibleValue" type="10"/>
       <ResultType name="ResultType" type="2" value="10"/>
-      <ColumnWidth name="ColumnWidth" type="3" value="3698"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="2783"/>
       <ColumnOrder name="ColumnOrder" type="3" value="0"/>
       <ColumnHidden name="ColumnHidden" type="1" value="False"/>
       <DisplayControl name="DisplayControl" type="3" value="109"/>
