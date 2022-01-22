@@ -1,25 +1,35 @@
 Version =21
 VersionRequired =20
 Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    NavigationButtons = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
     OrderByOn = NotDefault
+    AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
+    BorderStyle =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =11723
+    Width =9323
     DatasheetFontHeight =11
-    ItemSuffix =375
-    Left =7260
-    Top =1718
-    Right =18675
-    Bottom =8033
+    ItemSuffix =496
+    Left =7200
+    Top =833
+    Right =18930
+    Bottom =11205
     DatasheetGridlinesColor =15132391
     OrderBy ="txtVeranstaltungName DESC"
     RecordSource ="tblVeranstaltung"
+    OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     AllowDatasheetView =0
     FilterOnLoad =0
+    SplitFormSplitterBar =0
+    SplitFormSplitterBar =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
     DatasheetAlternateBackColor =15921906
@@ -104,7 +114,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =396
+            Height =549
             BackColor =15064278
             Name ="Formularkopf"
             AlternateBackThemeColorIndex =1
@@ -117,20 +127,23 @@ Begin Form
                     TextFontCharSet =177
                     TextAlign =1
                     TextFontFamily =0
-                    Left =2663
+                    Left =2565
                     Top =30
                     Width =1440
                     Height =323
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="Bezeichnungsfeld175"
-                    Caption ="Ort"
+                    Name ="headerVeranstaltungAnfang"
+                    Caption ="Beginn"
                     FontName ="Calibri"
+                    OnClick ="[Event Procedure]"
                     GroupTable =11
+                    LeftPadding =0
+                    RightPadding =0
                     GridlineColor =10921638
-                    LayoutCachedLeft =2663
+                    LayoutCachedLeft =2565
                     LayoutCachedTop =30
-                    LayoutCachedWidth =4103
+                    LayoutCachedWidth =4005
                     LayoutCachedHeight =353
                     ColumnStart =1
                     ColumnEnd =1
@@ -142,54 +155,36 @@ Begin Form
                     TextFontCharSet =177
                     TextAlign =1
                     TextFontFamily =0
-                    Left =4195
-                    Top =56
-                    Width =2483
+                    Left =6315
+                    Top =38
+                    Width =3008
                     Height =323
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="headerVeranstaltungAnfang"
-                    Caption ="dateVeranstaltungAnfang"
+                    Name ="Bezeichnungsfeld176"
+                    Caption ="Veranstaltungsort"
                     FontName ="Calibri"
-                    OnClick ="[Event Procedure]"
+                    GroupTable =16
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
                     GridlineColor =10921638
-                    LayoutCachedLeft =4195
-                    LayoutCachedTop =56
-                    LayoutCachedWidth =6678
-                    LayoutCachedHeight =379
-                    ColumnStart =3
-                    ColumnEnd =3
+                    LayoutCachedLeft =6315
+                    LayoutCachedTop =38
+                    LayoutCachedWidth =9323
+                    LayoutCachedHeight =361
+                    LayoutGroup =7
+                    GroupTable =16
                 End
                 Begin Label
                     OverlapFlags =85
                     TextFontCharSet =177
                     TextAlign =1
                     TextFontFamily =0
-                    Left =6689
-                    Top =56
-                    Width =2483
-                    Height =323
-                    BorderColor =8355711
-                    ForeColor =6710886
-                    Name ="Bezeichnungsfeld174"
-                    Caption ="dateVeranstaltungEnde"
-                    FontName ="Calibri"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =6689
-                    LayoutCachedTop =56
-                    LayoutCachedWidth =9172
-                    LayoutCachedHeight =379
-                    ColumnStart =4
-                    ColumnEnd =4
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextFontCharSet =177
-                    TextAlign =1
-                    TextFontFamily =0
-                    Left =113
+                    Left =420
                     Top =30
-                    Width =2483
+                    Width =2145
                     Height =323
                     BorderColor =8355711
                     ForeColor =6710886
@@ -198,73 +193,77 @@ Begin Form
                     FontName ="Calibri"
                     OnClick ="[Event Procedure]"
                     GroupTable =11
+                    LeftPadding =0
+                    RightPadding =0
                     GridlineColor =10921638
-                    LayoutCachedLeft =113
+                    LayoutCachedLeft =420
                     LayoutCachedTop =30
-                    LayoutCachedWidth =2596
+                    LayoutCachedWidth =2565
                     LayoutCachedHeight =353
                     LayoutGroup =1
                     GroupTable =11
                 End
                 Begin Label
                     OverlapFlags =85
-                    TextFontCharSet =177
                     TextAlign =1
-                    TextFontFamily =0
-                    Left =9240
-                    Top =56
-                    Width =2483
+                    Left =4080
+                    Top =53
+                    Width =2228
                     Height =323
                     BorderColor =8355711
                     ForeColor =6710886
-                    Name ="Bezeichnungsfeld176"
-                    Caption ="Veranstaltungsort"
+                    Name ="Bezeichnungsfeld174"
+                    Caption ="Ende"
                     FontName ="Calibri"
+                    GroupTable =15
                     GridlineColor =10921638
-                    LayoutCachedLeft =9240
-                    LayoutCachedTop =56
-                    LayoutCachedWidth =11723
-                    LayoutCachedHeight =379
+                    LayoutCachedLeft =4080
+                    LayoutCachedTop =53
+                    LayoutCachedWidth =6308
+                    LayoutCachedHeight =376
+                    LayoutGroup =2
+                    BackThemeColorIndex =-1
+                    BorderThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
+                    GroupTable =15
                 End
             End
         End
         Begin Section
-            Height =453
+            Height =420
             Name ="Detailbereich"
             OnClick ="[Event Procedure]"
-            AlternateBackColor =15921906
+            AlternateBackColor =16777215
             AlternateBackThemeColorIndex =1
-            AlternateBackShade =95.0
             BackThemeColorIndex =1
             Begin
                 Begin TextBox
-                    Locked = NotDefault
+                    Enabled = NotDefault
                     OverlapFlags =85
                     TextFontCharSet =177
                     TextAlign =1
                     TextFontFamily =0
                     IMESentenceMode =3
-                    Left =113
-                    Top =53
-                    Width =2483
+                    Left =4080
+                    Top =30
+                    Width =2228
                     Height =323
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="txtVeranstaltungName"
-                    ControlSource ="txtVeranstaltungName"
+                    Name ="dateVeranstaltungEnde"
+                    ControlSource ="dateVeranstaltungEnde"
                     FontName ="Calibri"
-                    OnClick ="[Event Procedure]"
-                    GroupTable =11
+                    InputMask ="00:00;0;_"
+                    GroupTable =21
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =113
-                    LayoutCachedTop =53
-                    LayoutCachedWidth =2596
-                    LayoutCachedHeight =376
-                    RowStart =1
-                    RowEnd =1
-                    LayoutGroup =1
-                    GroupTable =11
+                    LayoutCachedLeft =4080
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =6308
+                    LayoutCachedHeight =353
+                    LayoutGroup =5
+                    GroupTable =21
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -273,9 +272,36 @@ Begin Form
                     TextAlign =1
                     TextFontFamily =0
                     IMESentenceMode =3
-                    Left =4138
-                    Top =56
-                    Width =2483
+                    Left =420
+                    Top =30
+                    Width =2145
+                    Height =323
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtVeranstaltungName"
+                    ControlSource ="txtVeranstaltungName"
+                    FontName ="Calibri"
+                    OnClick ="[Event Procedure]"
+                    GroupTable =19
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =420
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =2565
+                    LayoutCachedHeight =353
+                    LayoutGroup =3
+                    GroupTable =19
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    IMESentenceMode =3
+                    Left =2573
+                    Top =30
+                    Width =1440
                     Height =323
                     TabIndex =2
                     BorderColor =10921638
@@ -284,45 +310,15 @@ Begin Form
                     ControlSource ="dateVeranstaltungAnfang"
                     FontName ="Calibri"
                     InputMask ="00:00;0;_"
+                    GroupTable =20
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =4138
-                    LayoutCachedTop =56
-                    LayoutCachedWidth =6621
-                    LayoutCachedHeight =379
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =3
-                    ColumnEnd =3
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    OverlapFlags =85
-                    TextFontCharSet =177
-                    TextAlign =1
-                    TextFontFamily =0
-                    IMESentenceMode =3
-                    Left =6689
-                    Top =53
-                    Width =2483
-                    Height =323
-                    TabIndex =3
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="dateVeranstaltungEnde"
-                    ControlSource ="dateVeranstaltungEnde"
-                    FontName ="Calibri"
-                    InputMask ="00:00;0;_"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6689
-                    LayoutCachedTop =53
-                    LayoutCachedWidth =9172
-                    LayoutCachedHeight =376
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =4
-                    ColumnEnd =4
+                    LayoutCachedLeft =2573
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =4013
+                    LayoutCachedHeight =353
+                    LayoutGroup =4
+                    GroupTable =20
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
@@ -334,49 +330,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =2663
-                    Top =53
-                    Width =1440
-                    Height =323
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =3484194
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
-                    Name ="Ort"
-                    ControlSource ="Ort"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt ORDER BY [NameOrt]; "
-                    ColumnWidths ="0;1441"
-                    FontName ="Calibri"
-                    BaseInfo ="\"SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt ORDER BY [NameOrt]; \";\""
-                        "tblOrt\";\"\";\"ID\";\"NameOrt\";\"PrimaryKey\""
-                    GroupTable =11
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =2663
-                    LayoutCachedTop =53
-                    LayoutCachedWidth =4103
-                    LayoutCachedHeight =376
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =11
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    Enabled = NotDefault
-                    OverlapFlags =85
-                    TextFontCharSet =177
-                    TextAlign =1
-                    TextFontFamily =0
-                    IMESentenceMode =3
-                    ColumnCount =2
-                    ListWidth =1440
-                    Left =9240
-                    Top =53
-                    Width =2483
+                    Left =6353
+                    Top =30
+                    Width =2903
                     Height =323
                     TabIndex =4
                     BorderColor =10921638
@@ -390,22 +346,47 @@ Begin Form
                     FontName ="Calibri"
                     BaseInfo ="\"SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; \";\"tblOrt\";\"\";\"ID\""
                         ";\"NameOrt\";\"PrimaryKey\""
+                    GroupTable =22
                     GridlineColor =10921638
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =9240
-                    LayoutCachedTop =53
-                    LayoutCachedWidth =11723
-                    LayoutCachedHeight =376
-                    RowStart =1
-                    RowEnd =1
+                    LayoutCachedLeft =6353
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =9256
+                    LayoutCachedHeight =353
+                    LayoutGroup =6
+                    GroupTable =22
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =56
+                    Top =56
+                    Width =336
+                    Height =293
+                    TabIndex =3
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="idVeranstaltung"
+                    ControlSource ="idVeranstaltung"
+                    FontName ="Calibri"
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =56
+                    LayoutCachedTop =56
+                    LayoutCachedWidth =392
+                    LayoutCachedHeight =349
                 End
             End
         End
         Begin FormFooter
-            Height =0
+            Height =15
             Name ="Formularfuﬂ"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =1

@@ -6,8 +6,8 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
-Dim WithEvents listViewVeranstaltung As MSComctlLib.ListView
-Attribute listViewVeranstaltung.VB_VarHelpID = -1
+
+Public okStatus As Boolean
 
 'Dim veranstaltungNameOK, veranstaltungAnfangOK, veranstaltungEndeOK, veranstaltungOrtOK As Boolean
 
@@ -45,6 +45,7 @@ Private Sub btnSpeichern_Click()
     blnGood = True
     Call DoCmd.RunCommand(acCmdSaveRecord)
     blnGood = False
+    Me.Refresh
 
 End Sub
 
@@ -56,26 +57,35 @@ End Sub
 
 Private Sub dateVeranstaltungEnde_BeforeUpdate(Cancel As Integer)
     If Me.dateVeranstaltungEnde < Me.dateVeranstaltungAnfang Then
+    DoCmd.SetWarnings False
         MsgBox "Ende für Veranstaltung muss vor Anfang sein - Bitte korrigieren"
         Me.dateVeranstaltungEnde.Undo
+        'Me.dateVeranstaltungEnde = Me.dateVeranstaltungAnfang
         Cancel = True
+'    DoCmd.SetWarnings True
+    End If
+    
+    If Me.dateVeranstaltungEnde > Me.dateVeranstaltungAnfang Then
+    okStatus = True
     End If
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
-    'Dim strMsg As String
-    '
-    '    If Not blnGood Then
-    '        Cancel = True
-    '        strMsg = "Please use the Save button to save your changes," & _
-    '                 vbNewLine & "or Escape to reset them."
-    '        Call MsgBox(Prompt:=strMsg, Title:="Before Update")
-    '    End If
+    Dim strMsg As String
+    
+        If Not blnGood Then
+            Cancel = True
+            'strMsg = "Please use the Save button to save your changes," & _
+                     vbNewLine & "or Escape to reset them."
+            'Call MsgBox(Prompt:=strMsg, Title:="Before Update")
+        End If
 
 End Sub
 
 Private Sub Form_Load()
+
+okStatus = False
 
 ''''''''''''''''''''''''''''''''''''''
 

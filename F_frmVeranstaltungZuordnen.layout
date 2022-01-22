@@ -7,11 +7,11 @@ Begin Form
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =16260
+    Width =23096
     DatasheetFontHeight =11
-    ItemSuffix =100
-    Right =21225
-    Bottom =11355
+    ItemSuffix =102
+    Right =27135
+    Bottom =14235
     DatasheetGridlinesColor =15132391
     RecordSource ="SELECT tblVeranstaltung.idVeranstaltung, tblVeranstaltung.txtVeranstaltungName, "
         "tblVeranstaltung.dateVeranstaltungDatum, tblVeranstaltung.dateVeranstaltungAnfan"
@@ -118,6 +118,16 @@ Begin Form
             ForeShade =50.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin Subform
+            BorderLineStyle =0
+            Width =1701
+            Height =1701
+            BorderThemeColorIndex =1
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            BorderShade =65.0
+            ShowPageHeaderAndPageFooter =1
         End
         Begin UnboundObjectFrame
             SpecialEffect =2
@@ -326,6 +336,7 @@ Begin Form
             End
         End
         Begin Section
+            CanGrow = NotDefault
             Height =7815
             Name ="Detailbereich"
             AutoHeight =1
@@ -1088,6 +1099,42 @@ Begin Form
                             RowEnd =4
                             LayoutGroup =1
                             GroupTable =1
+                        End
+                    End
+                End
+                Begin Subform
+                    OverlapFlags =215
+                    Left =11111
+                    Top =1133
+                    Width =11985
+                    Height =5152
+                    TabIndex =8
+                    BorderColor =10921638
+                    Name ="subfrmVeranstaltungZuordnen"
+                    SourceObject ="Form.subfrmVeranstaltungZuordnen"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11111
+                    LayoutCachedTop =1133
+                    LayoutCachedWidth =23096
+                    LayoutCachedHeight =6285
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =11111
+                            Top =893
+                            Width =2798
+                            Height =293
+                            BorderColor =8355711
+                            ForeColor =6710886
+                            Name ="subfrmVeranstaltungZuordnen Beschriftung"
+                            Caption ="subfrmVeranstaltungZuordnen"
+                            EventProcPrefix ="subfrmVeranstaltungZuordnen_Beschriftung"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =11111
+                            LayoutCachedTop =893
+                            LayoutCachedWidth =13909
+                            LayoutCachedHeight =1186
                         End
                     End
                 End

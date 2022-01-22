@@ -7,11 +7,11 @@ Begin Form
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =18594
+    Width =16360
     DatasheetFontHeight =11
-    ItemSuffix =60
+    ItemSuffix =62
     Right =27135
-    Bottom =14235
+    Bottom =14670
     DatasheetGridlinesColor =15132391
     RecordSource ="tblVeranstaltung"
     BeforeUpdate ="[Event Procedure]"
@@ -332,7 +332,7 @@ Begin Form
                     TextAlign =1
                     Left =1050
                     Top =60
-                    Width =10080
+                    Width =10275
                     Height =460
                     FontSize =18
                     BorderColor =6968388
@@ -345,7 +345,7 @@ Begin Form
                     HorizontalAnchor =2
                     LayoutCachedLeft =1050
                     LayoutCachedTop =60
-                    LayoutCachedWidth =11130
+                    LayoutCachedWidth =11325
                     LayoutCachedHeight =520
                     ColumnStart =1
                     ColumnEnd =1
@@ -361,7 +361,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =10608
+            Height =13673
             Name ="Detailbereich"
             AlternateBackColor =15921906
             AlternateBackThemeColorIndex =1
@@ -1052,12 +1052,13 @@ Begin Form
                     Overlaps =1
                 End
                 Begin Subform
+                    Locked = NotDefault
+                    CanShrink = NotDefault
                     OverlapFlags =215
-                    OldBorderStyle =0
                     Left =6916
                     Top =283
-                    Width =11678
-                    Height =6577
+                    Width =9444
+                    Height =8760
                     TabIndex =11
                     BorderColor =10921638
                     Name ="subfrmVeranstaltung"
@@ -1066,8 +1067,8 @@ Begin Form
 
                     LayoutCachedLeft =6916
                     LayoutCachedTop =283
-                    LayoutCachedWidth =18594
-                    LayoutCachedHeight =6860
+                    LayoutCachedWidth =16360
+                    LayoutCachedHeight =9043
                     ShowPageHeaderAndPageFooter =0
                     Begin
                         Begin Label

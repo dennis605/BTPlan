@@ -13,8 +13,20 @@ Private Sub Bezeichnungsfeld172_Click()
 
 End Sub
 
+
+
 Private Sub Detailbereich_Click()
-'DoCmd.GoToRecord acDataForm, "frmVeranstaltung", acGoTo, idVeranstaltung
+''''''''''''''MsgBox "erggege" & idVeranstaltung
+Dim rs As Object
+    Set rs = Forms("frmVeranstaltung").Form.Recordset.Clone
+    rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
+    If Not rs.EOF Then Forms("frmVeranstaltung").Form.Bookmark = rs.Bookmark
+
+End Sub
+
+Private Sub Form_Current()
+Me.AllowAdditions = False
+
 End Sub
 
 Private Sub headerVeranstaltung_Click()
@@ -28,6 +40,27 @@ Private Sub headerVeranstaltungAnfang_Click()
 
 DoCmd.SetOrderBy "dateVeranstaltungAnfang ASC"
 '
+End Sub
+
+
+Private Sub txtSearch_BeforeUpdate(Cancel As Integer)
+Dim parentForm As String
+
+parentForm = Me.Parent.Name
+
+Dim strFilter As String
+     If Len(Me!txtSearch) > 0 Then
+         strFilter = "txtVeranstaltungName LIKE '" _
+             & Me!txtSearch & "'"
+         Me!parentForm.Form.Filter = strFilter
+         Me!parentForm.Form.FilterOn = True
+     Else
+         Me.Form.Filter = ""
+     End If
+End Sub
+
+Private Sub txtSearch_Click()
+Me.AllowEdits = True
 End Sub
 
 Private Sub txtVeranstaltungName_Click()
