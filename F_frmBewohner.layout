@@ -10,8 +10,8 @@ Begin Form
     Width =11905
     DatasheetFontHeight =11
     ItemSuffix =134
-    Right =21225
-    Bottom =11355
+    Right =27135
+    Bottom =14235
     DatasheetGridlinesColor =15132391
     RecordSource ="tblBewohner"
     DatasheetFontName ="Calibri"
@@ -158,10 +158,9 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =1701
+            Height =525
             BackColor =15064278
             Name ="Formularkopf"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =2
@@ -675,29 +674,11 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT [tblBewohner].[idBewohner], [tblBewohner].[calcBewohnerName] FROM tblBewo"
                         "hner; "
-                    ColumnWidths ="0;1440"
+                    ColumnWidths ="0;1442"
+                    AfterUpdate ="[Event Procedure]"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
-                    AfterUpdateEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =12
-                        Begin
-                            Action ="SearchForRecord"
-                            Argument ="-1"
-                            Argument =""
-                            Argument ="2"
-                            Argument ="=\"[idBewohner] = \" & Str(Nz(Screen.ActiveControl,0))"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"lstBewohner\" xmlns=\"http://schemas.microsoft.com/office/ac"
-                                "cessservices/2009/11/application\"><Statements><Action Name=\"SearchForRecord\">"
-                                "<Argument Name=\"WhereCondition\""
-                        End
-                        Begin
-                            Comment ="_AXL:>=\"[idBewohner] = \" &amp; Str(Nz(Screen.ActiveControl,0))</Argument></Act"
-                                "ion></Statements></UserInterfaceMacro>"
-                        End
-                    End
+                    AllowValueListEdits =0
 
                     LayoutCachedLeft =5612
                     LayoutCachedTop =566

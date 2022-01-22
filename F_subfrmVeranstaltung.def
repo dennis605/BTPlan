@@ -17,10 +17,12 @@ End Sub
 
 Private Sub Detailbereich_Click()
 ''''''''''''''MsgBox "erggege" & idVeranstaltung
+Dim parentForm As String
+parentForm = Me.Parent.Name
 Dim rs As Object
-    Set rs = Forms("frmVeranstaltung").Form.Recordset.Clone
+    Set rs = Forms(parentForm).Form.Recordset.Clone
     rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
-    If Not rs.EOF Then Forms("frmVeranstaltung").Form.Bookmark = rs.Bookmark
+    If Not rs.EOF Then Forms(parentForm).Form.Bookmark = rs.Bookmark
 
 End Sub
 

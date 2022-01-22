@@ -1,0 +1,54 @@
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Public idEvent As Integer
+
+Private Sub Bezeichnungsfeld172_Click()
+
+
+End Sub
+
+
+
+
+
+Private Sub Detailbereich_Click()
+'DoCmd.GoToRecord acDataForm, "frmVeranstaltung", acGoTo, idVeranstaltung
+End Sub
+
+Private Sub Form_Current()
+
+    Me.AllowAdditions = False
+
+End Sub
+
+
+Private Sub headerVeranstaltung_Click()
+
+DoCmd.SetOrderBy "txtVeranstaltungName ASC"
+
+
+End Sub
+
+Private Sub headerVeranstaltungAnfang_Click()
+
+DoCmd.SetOrderBy "dateVeranstaltungAnfang ASC"
+'
+End Sub
+
+Private Sub txtVeranstaltungName_Click()
+
+Dim parentForm As String
+
+parentForm = Me.Parent.Name
+
+Dim rs As Object
+    Set rs = Forms(parentForm).Form.Recordset.Clone
+    rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
+    If Not rs.EOF Then Forms(parentForm).Form.Bookmark = rs.Bookmark
+End Sub

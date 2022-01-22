@@ -91,3 +91,27 @@ End Sub
 'Private Sub txtBewohnerVorname_GotFocus()
 'DoCmd.SetWarnings False
 'End Sub
+Private Sub lstBewohner_AfterUpdate()
+'DoCmd.RunMacro "updateSelectListBewohner"
+End Sub
+
+Private Sub lstBewohner_Click()
+DoCmd.RunMacro "updateSelectListBewohner"
+'DoCmd.RunMacro "updateSelectListBewohner"
+Dim test As Boolean
+'test = lstBewohner.Selected(1)
+
+Dim varItem As Variant
+Dim indexitm As Long
+lstBewohner.Requery
+'varItm = lstBewohner.ListIndex
+'indexitm = lstBewohner.ItemData(varItm)
+
+'For Each varItem In lstBewohner.ItemsSelected
+ ' Print value of bound column.
+' Debug.Print lstBewohner.ItemData(varItem)
+' Next varItem
+
+'lstBewohner.ListCount
+
+End Sub
