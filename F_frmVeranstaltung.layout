@@ -10,8 +10,8 @@ Begin Form
     Width =16360
     DatasheetFontHeight =11
     ItemSuffix =62
-    Right =27135
-    Bottom =14670
+    Right =20505
+    Bottom =14235
     DatasheetGridlinesColor =15132391
     RecordSource ="tblVeranstaltung"
     BeforeUpdate ="[Event Procedure]"
@@ -187,7 +187,6 @@ Begin Form
             Height =546
             BackColor =15064278
             Name ="Formularkopf"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             BackThemeColorIndex =2
@@ -338,7 +337,7 @@ Begin Form
                     BorderColor =6968388
                     ForeColor =6968388
                     Name ="Auto_Kopfzeile0"
-                    Caption ="tblVeranstaltung"
+                    Caption ="Veranstaltungen"
                     FontName ="Calibri Light"
                     GroupTable =2
                     GridlineColor =10921638
@@ -762,6 +761,7 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; "
                     ColumnWidths ="0;1440"
+                    BeforeUpdate ="[Event Procedure]"
                     BaseInfo ="\"SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; \";\"tblOrt\";\"\";\"ID\""
                         ";\"NameOrt\";\"PrimaryKey\""
                     GroupTable =1
@@ -950,86 +950,9 @@ Begin Form
                     ForeColor =4210752
                     Name ="btnDuplizieren"
                     Caption ="Duplizieren"
+                    OnClick ="[Event Procedure]"
                     GroupTable =3
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =0
-                        Begin
-                            Action ="OnError"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="RunCommand"
-                            Argument ="50"
-                        End
-                        Begin
-                            Condition ="[MacroError]=0"
-                            Action ="RunCommand"
-                            Argument ="190"
-                        End
-                        Begin
-                            Condition ="[MacroError]=0"
-                            Action ="RunCommand"
-                            Argument ="28"
-                        End
-                        Begin
-                            Condition ="[MacroError]=0"
-                            Action ="RunCommand"
-                            Argument ="50"
-                        End
-                        Begin
-                            Condition ="[MacroError]=0"
-                            Action ="RunCommand"
-                            Argument ="191"
-                        End
-                        Begin
-                            Condition ="[MacroError]<>0"
-                            Action ="MsgBox"
-                            Argument ="=[MacroError].[Description]"
-                            Argument ="-1"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="RunCommand"
-                            Argument ="18"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"btnDuplizieren\" Event=\"OnClick\" xmlns=\"http://schemas.mi"
-                                "crosoft.com/office/accessservices/2009/11/application\"><Statements><Action Name"
-                                "=\"OnError\"/><Action Name=\"RunMe"
-                        End
-                        Begin
-                            Comment ="_AXL:nuCommand\"><Argument Name=\"Command\">SelectRecord</Argument></Action><Con"
-                                "ditionalBlock><If><Condition>[MacroError]=0</Condition><Statements><Action Name="
-                                "\"RunMenuCommand\"><Argument Name=\"Command\">Copy</Argument></Action></Statemen"
-                                "ts></If></Conditiona"
-                        End
-                        Begin
-                            Comment ="_AXL:lBlock><ConditionalBlock><If><Condition>[MacroError]=0</Condition><Statemen"
-                                "ts><Action Name=\"RunMenuCommand\"><Argument Name=\"Command\">RecordsGoToNew</Ar"
-                                "gument></Action></Statements></If></ConditionalBlock><ConditionalBlock><If><Cond"
-                                "ition>[MacroError"
-                        End
-                        Begin
-                            Comment ="_AXL:]=0</Condition><Statements><Action Name=\"RunMenuCommand\"><Argument Name=\""
-                                "Command\">SelectRecord</Argument></Action></Statements></If></ConditionalBlock><"
-                                "ConditionalBlock><If><Condition>[MacroError]=0</Condition><Statements><Action Na"
-                                "me=\"RunMenuComma"
-                        End
-                        Begin
-                            Comment ="_AXL:nd\"><Argument Name=\"Command\">Paste</Argument></Action></Statements></If>"
-                                "</ConditionalBlock><ConditionalBlock><If><Condition>[MacroError]&lt;&gt;0</Condi"
-                                "tion><Statements><Action Name=\"MessageBox\"><Argument Name=\"Message\">=[MacroE"
-                                "rror].[Description]<"
-                        End
-                        Begin
-                            Comment ="_AXL:/Argument></Action></Statements></If></ConditionalBlock><Action Name=\"RunM"
-                                "enuCommand\"><Argument Name=\"Command\">Refresh</Argument></Action></Statements>"
-                                "</UserInterfaceMacro>"
-                        End
-                    End
 
                     LayoutCachedLeft =5085
                     LayoutCachedTop =5100

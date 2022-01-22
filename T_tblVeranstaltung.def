@@ -168,7 +168,7 @@
       <DataUpdatable name="DataUpdatable" type="1" value="False"/>
       <ForeignName name="ForeignName" type="12"/>
       <DefaultValue name="DefaultValue" type="12" value=""/>
-      <ValidationRule name="ValidationRule" type="12" value="Not Is Null"/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
       <ValidationText name="ValidationText" type="12" value="Bitte gültige Uhrzeit in Form hh:mm für Ende angeben"/>
       <Required name="Required" type="1" value="False"/>
       <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>

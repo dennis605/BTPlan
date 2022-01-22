@@ -7,11 +7,22 @@ Option Compare Database
 Option Explicit
 
 
-Public okStatus As Boolean
+Public okStart As Boolean
+Public okStop As Boolean
+Public okOrt As Boolean
 
 'Dim veranstaltungNameOK, veranstaltungAnfangOK, veranstaltungEndeOK, veranstaltungOrtOK As Boolean
 
 Private blnGood As Boolean
+
+
+Private Sub btnDuplizieren_Click()
+
+    blnGood = True
+    DoCmd.RunMacro "duplicateRecord"
+    blnGood = False
+
+End Sub
 
 Private Sub btnLoeschen_Click()
 
@@ -22,7 +33,7 @@ Private Sub btnLoeschen_Click()
         DoCmd.SetWarnings False
     
         If MsgBox("Veranstaltung löschen?" & vbCrLf & _
-                  "Soll die Veranstaltung: " & vbCrLf & vbCrLf & Me.txtVeranstaltungName & vbCrLf & vbCrLf & "gelöscht werden?", vbYesNo, "Veranstaltung löschen") = vbYes Then
+            "Soll die Veranstaltung: " & vbCrLf & vbCrLf & Me.txtVeranstaltungName & vbCrLf & vbCrLf & "gelöscht werden?", vbYesNo, "Veranstaltung löschen") = vbYes Then
             DoCmd.RunCommand acCmdDeleteRecord
             DoCmd.SetWarnings True
             Form.Refresh
@@ -42,10 +53,16 @@ End Sub
 
 Private Sub btnSpeichern_Click()
 
-    blnGood = True
-    Call DoCmd.RunCommand(acCmdSaveRecord)
-    blnGood = False
-    Me.Refresh
+    If okStop = True And okOrt = True Then
+
+        blnGood = True
+        Call DoCmd.RunCommand(acCmdSaveRecord)
+        blnGood = False
+        Me.Refresh
+
+    End If
+
+    
 
 End Sub
 
@@ -55,18 +72,22 @@ Private Sub dateVeranstaltungAnfang_GotFocus()
     Me.dateVeranstaltungAnfang.SelStart = 4
 End Sub
 
+
+
 Private Sub dateVeranstaltungEnde_BeforeUpdate(Cancel As Integer)
     If Me.dateVeranstaltungEnde < Me.dateVeranstaltungAnfang Then
-    DoCmd.SetWarnings False
+        okStop = False
+        DoCmd.SetWarnings False
         MsgBox "Ende für Veranstaltung muss vor Anfang sein - Bitte korrigieren"
         Me.dateVeranstaltungEnde.Undo
         'Me.dateVeranstaltungEnde = Me.dateVeranstaltungAnfang
         Cancel = True
-'    DoCmd.SetWarnings True
+        
+        '    DoCmd.SetWarnings True
     End If
     
     If Me.dateVeranstaltungEnde > Me.dateVeranstaltungAnfang Then
-    okStatus = True
+        okStop = True
     End If
 End Sub
 
@@ -74,80 +95,25 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 
     Dim strMsg As String
     
-        If Not blnGood Then
-            Cancel = True
-            'strMsg = "Please use the Save button to save your changes," & _
-                     vbNewLine & "or Escape to reset them."
-            'Call MsgBox(Prompt:=strMsg, Title:="Before Update")
-        End If
+    If Not blnGood Then
+        Cancel = True
+        'strMsg = "Please use the Save button to save your changes," & _
+         vbNewLine & "or Escape to reset them."
+        'Call MsgBox(Prompt:=strMsg, Title:="Before Update")
+    End If
 
 End Sub
 
 Private Sub Form_Load()
 
-okStatus = False
+    okStart = False
+    okStop = False
+    okOrt = False
 
-''''''''''''''''''''''''''''''''''''''
+End Sub
 
-'Me.txtTest = idEvent
-'''''''''''''''''''''''''''''''''''''
-
-'    Set listViewVeranstaltung = Me!lstviewVeranstaltung.Object
-'
-'    With listViewVeranstaltung
-'
-'        .View = lvwReport
-'
-'        .View = lvwReport
-'         .Appearance = ccFlat
-'         .BorderStyle = ccNone
-'         .FlatScrollBar = False
-'         .GridLines = True
-'         .FullRowSelect = True
-'
-'         .ColumnHeaders.Clear
-'
-'        .ColumnHeaders.Add , , "VeranstaltungID"
-'        .ColumnHeaders.Add , , "Veranstaltung Name"
-'        .ColumnHeaders.Add , , "Veranstaltung Beginn"
-'        .ColumnHeaders.Add , , "Veranstaltung Ende"
-'        .ColumnHeaders.Add , , "Veranstaltung Ort"
-'
-'    End With
-'
-'   ' Call ListViewFuellen
-'
-'End Sub
-'
-'Public Sub test()
-'
-'    MsgBox "test"
-'
-'End Sub
-'
-'
-'Private Sub ListViewFuellen()
-'    Dim db As DAO.Database
-'    Dim rst As DAO.Recordset
-'    Dim objListitem As MSComctlLib.ListItem
-'    Set db = CurrentDb
-'    Set rst = db.OpenRecordset("SELECT idVeranstaltung, txtVeranstaltungName, dateVeranstaltungAnfang, dateVeranstaltungEnde, Veranstaltungsort FROM tblVeranstaltung", dbOpenDynaset)
-'    Do While Not rst.EOF
-'        Set objListitem = listViewVeranstaltung.ListItems.Add(, "pp" & rst!idVeranstaltung, rst!idVeranstaltung)
-'        With objListitem
-'            .ListSubItems.Add , , rst!txtVeranstaltungName
-'            .ListSubItems.Add , , rst!dateVeranstaltungAnfang
-'            .ListSubItems.Add , , rst!dateVeranstaltungEnde
-'            .ListSubItems.Add , , rst!Veranstaltungsort
-'        End With
-'        rst.MoveNext
-'    Loop
-'    rst.Close
-'    Set rst = Nothing
-'    Set db = Nothing
-'End Sub
-
-
-'Private Sub listViewVeranstaltung_OnItemSelectionChanged(e As ListViewItemSelectionChangedEventArgs)
-'MsgBox "Test"
+Private Sub Veranstaltungsort_BeforeUpdate(Cancel As Integer)
+If Not Me.Veranstaltungsort = "" Then
+okOrt = True
+End If
 End Sub
