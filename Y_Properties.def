@@ -13,14 +13,13 @@
     <CheckTruncatedNumFields name="CheckTruncatedNumFields" type="4" value="1" sort="1"/>
     <ClearCacheonClose name="Clear Cache on Close" type="4" value="0" sort="1"/>
     <ContinuousFormNavigationKeys name="Continuous Form Navigation Keys" type="4" value="0" sort="1"/>
-    <DefaultBackupLocation name="DefaultBackupLocation" type="10" value="C:\Users\denni\OneDrive\BACKUP\btplan-export-vcs-test\" sort="1"/>
     <DesignWithData name="DesignWithData" type="1" value="True" sort="1"/>
     <HasOfflineLists name="HasOfflineLists" type="3" value="70" sort="1"/>
     <NavPaneCategory name="NavPane Category" type="4" value="0" sort="1"/>
     <NavPaneClosed name="NavPane Closed" type="4" value="0" sort="1"/>
     <NavPaneSortBy name="NavPane Sort By" type="4" value="1" sort="1"/>
     <NavPaneViewBy name="NavPane View By" type="4" value="0" sort="1"/>
-    <NavPaneWidth name="NavPane Width" type="4" value="424" sort="1"/>
+    <NavPaneWidth name="NavPane Width" type="4" value="494" sort="1"/>
     <NeverCache name="Never Cache" type="4" value="0" sort="1"/>
     <PicturePropertyStorageFormat name="Picture Property Storage Format" type="4" value="0" sort="1"/>
     <ProjVer name="ProjVer" type="3" value="142" sort="1"/>
