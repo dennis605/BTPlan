@@ -25,9 +25,10 @@ Private Sub Form_Load()
         .LabelWrap = True
         .FullRowSelect = True
         .ColumnHeaders.Clear
-        .ColumnHeaders.Add 1, "Name", "Veranstaltunge", 3000
-        .ColumnHeaders.Add 2, "Start", "Start Veranstalrung", 2000
-        .ColumnHeaders.Add 3, "Ende", "Ende Veranstaltung", 2000
+        .ColumnHeaders.Add 1, "Name", "Veranstaltung", 3000
+        .ColumnHeaders.Add 2, "start", "Start", 2000
+        .ColumnHeaders.Add 3, "ende", "Ende", 2000
+        .ColumnHeaders.Add 4, "ort", "Ort", 2000
         
     End With
     ListViewFuellen
@@ -51,7 +52,7 @@ Private Sub KontrollkaestchenAktivieren()
         Dim SQL As String
         Set rst = db.OpenRecordset("SELECT * FROM qryVeranstaltung_aktiv WHERE frkTagesplan = " & Me!idTagesplan, dbOpenDynaset)
         Do While Not rst.EOF
-            With objListViewTagesplan.ListItems("a" & rst!idVeranstaltung)
+            With objListViewTagesplan.ListItems("b" & rst!idVeranstaltung)
                 .Checked = Not IsNull(rst!idVeranstaltung)
             End With
             rst.MoveNext
@@ -71,16 +72,20 @@ Private Sub ListViewFuellen()
     Do While Not rst.EOF
         With objListViewTagesplan
 
-            Set objListitem = .ListItems.Add(, "a" & rst!idVeranstaltung, rst!txtVeranstaltungName)
+            Set objListitem = .ListItems.Add(, "b" & rst!idVeranstaltung, rst!txtVeranstaltungName)
             
             With objListitem
-                .ListSubItems.Add , , rst!idVeranstaltung
+               ' .ListSubItems.Add , , rst!idVeranstaltung
                 
                 If rst!dateVeranstaltungAnfang = "few" Then
                     rst!dateVeranstaltungAnfang = "00:00"
                 End If
                 
                 .ListSubItems.Add 1, "start", rst!dateVeranstaltungAnfang
+                .ListSubItems.Add 2, "ende", rst!dateVeranstaltungEnde
+                .ListSubItems.Add 3, "ort", rst!NameOrt
+                
+                
             End With
             
            

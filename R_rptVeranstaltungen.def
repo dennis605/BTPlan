@@ -3,6 +3,7 @@ VersionRequired =20
 Begin Report
     LayoutForPrint = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     DateGrouping =1
@@ -16,7 +17,7 @@ Begin Report
     Right =24825
     Bottom =12375
     DatasheetGridlinesColor =15132391
-    Filter ="idTagesplan = 1"
+    Filter ="idTagesplan = 2"
     RecordSource ="qryVeranstaltungen"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0

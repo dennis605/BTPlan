@@ -9,7 +9,7 @@ Begin Form
     GridY =10
     Width =23096
     DatasheetFontHeight =11
-    ItemSuffix =104
+    ItemSuffix =113
     Right =27135
     Bottom =14235
     DatasheetGridlinesColor =15132391
@@ -547,84 +547,6 @@ Begin Form
                     RowStart =2
                     RowEnd =2
                 End
-                Begin ComboBox
-                    OverlapFlags =85
-                    TextAlign =1
-                    IMESentenceMode =3
-                    ColumnCount =2
-                    ListWidth =1440
-                    Left =4928
-                    Top =338
-                    Width =4824
-                    Height =337
-                    BorderColor =10921638
-                    ForeColor =3484194
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
-                    Name ="Kombinationsfeld44"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT [tblVeranstaltung].[idVeranstaltung], [tblVeranstaltung].[txtVeranstaltun"
-                        "gName] FROM tblVeranstaltung; "
-                    ColumnWidths ="0;1440"
-                    BaseInfo ="\"SELECT [tblVeranstaltung].[idVeranstaltung], [tblVeranstaltung].[txtVeranstalt"
-                        "ungName] FROM tblVeranstaltung; \";\"tblVeranstaltung\";\"\";\"idVeranstaltung\""
-                        ";\"txtVeranstaltungName\";\"PrimaryKey\""
-                    GroupTable =1
-                    BottomPadding =150
-                    GridlineColor =10921638
-                    AfterUpdateEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =12
-                        Begin
-                            Action ="SearchForRecord"
-                            Argument ="-1"
-                            Argument =""
-                            Argument ="2"
-                            Argument ="=\"[idVeranstaltung] = \" & Str(Nz(Screen.ActiveControl,0))"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"Kombinationsfeld44\" xmlns=\"http://schemas.microsoft.com/of"
-                                "fice/accessservices/2009/11/application\"><Statements><Action Name=\"SearchForRe"
-                                "cord\"><Argument Name=\"WhereCon"
-                        End
-                        Begin
-                            Comment ="_AXL:dition\">=\"[idVeranstaltung] = \" &amp; Str(Nz(Screen.ActiveControl,0))</A"
-                                "rgument></Action></Statements></UserInterfaceMacro>"
-                        End
-                    End
-
-                    LayoutCachedLeft =4928
-                    LayoutCachedTop =338
-                    LayoutCachedWidth =9752
-                    LayoutCachedHeight =675
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            Left =803
-                            Top =338
-                            Width =4059
-                            Height =337
-                            BorderColor =8355711
-                            ForeColor =6710886
-                            Name ="cmbVeranstaltung_Bezeichnungsfeld"
-                            Caption ="Veranstaltung"
-                            GroupTable =1
-                            BottomPadding =150
-                            GridlineColor =10921638
-                            LayoutCachedLeft =803
-                            LayoutCachedTop =338
-                            LayoutCachedWidth =4862
-                            LayoutCachedHeight =675
-                            LayoutGroup =1
-                            GroupTable =1
-                        End
-                    End
-                End
                 Begin CustomControl
                     Enabled = NotDefault
                     SizeMode =1
@@ -863,59 +785,6 @@ Begin Form
                     ColumnEnd =1
                 End
                 Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =1
-                    IMESentenceMode =3
-                    Left =4928
-                    Top =863
-                    Width =4824
-                    Height =293
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="dateVeranstaltungDatum"
-                    ControlSource ="dateVeranstaltungDatum"
-                    GroupTable =1
-                    BottomPadding =150
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =4928
-                    LayoutCachedTop =863
-                    LayoutCachedWidth =9752
-                    LayoutCachedHeight =1156
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =1
-                    ColumnEnd =1
-                    LayoutGroup =1
-                    GroupTable =1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            Left =803
-                            Top =863
-                            Width =4059
-                            Height =293
-                            BorderColor =8355711
-                            ForeColor =6710886
-                            Name ="Bezeichnungsfeld65"
-                            Caption ="dateVeranstaltungDatum"
-                            GroupTable =1
-                            BottomPadding =150
-                            GridlineColor =10921638
-                            LayoutCachedLeft =803
-                            LayoutCachedTop =863
-                            LayoutCachedWidth =4862
-                            LayoutCachedHeight =1156
-                            RowStart =1
-                            RowEnd =1
-                            LayoutGroup =1
-                            GroupTable =1
-                        End
-                    End
-                End
-                Begin TextBox
                     Enabled = NotDefault
                     OverlapFlags =85
                     TextAlign =1
@@ -955,7 +824,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld72"
-                            Caption ="dateVeranstaltungAnfang"
+                            Caption ="Beginn"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -1009,7 +878,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld79"
-                            Caption ="dateVeranstaltungEnde"
+                            Caption ="Ende"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -1063,7 +932,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =6710886
                             Name ="Bezeichnungsfeld93"
-                            Caption ="txtVeranstaltungOrt"
+                            Caption ="Veranstaltungsort"
                             GroupTable =1
                             BottomPadding =150
                             GridlineColor =10921638
@@ -1084,7 +953,6 @@ Begin Form
                     Top =308
                     Width =9585
                     Height =7050
-                    TabIndex =7
                     BorderColor =10921638
                     Name ="subfrmVeranstaltung"
                     SourceObject ="Form.subfrmVeranstaltung"
@@ -1094,6 +962,94 @@ Begin Form
                     LayoutCachedTop =308
                     LayoutCachedWidth =19508
                     LayoutCachedHeight =7358
+                End
+                Begin EmptyCell
+                    Left =803
+                    Top =338
+                    Width =4059
+                    Height =337
+                    Name ="EmptyCell104"
+                    GroupTable =1
+                    BottomPadding =150
+                    GridlineColor =10921638
+                    LayoutCachedLeft =803
+                    LayoutCachedTop =338
+                    LayoutCachedWidth =4862
+                    LayoutCachedHeight =675
+                    LayoutGroup =1
+                    GroupTable =1
+                End
+                Begin EmptyCell
+                    Left =4928
+                    Top =338
+                    Width =4824
+                    Height =337
+                    Name ="EmptyCell105"
+                    GroupTable =1
+                    BottomPadding =150
+                    GridlineColor =10921638
+                    LayoutCachedLeft =4928
+                    LayoutCachedTop =338
+                    LayoutCachedWidth =9752
+                    LayoutCachedHeight =675
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =1
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =4928
+                    Top =863
+                    Width =4824
+                    Height =293
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtVeranstaltungName"
+                    ControlSource ="txtVeranstaltungName"
+                    GroupTable =1
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4928
+                    LayoutCachedTop =863
+                    LayoutCachedWidth =9752
+                    LayoutCachedHeight =1156
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =1
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =803
+                            Top =863
+                            Width =4059
+                            Height =293
+                            BorderColor =8355711
+                            ForeColor =6710886
+                            Name ="Bezeichnungsfeld108"
+                            Caption ="Veranstaltung"
+                            GroupTable =1
+                            BottomPadding =150
+                            GridlineColor =10921638
+                            LayoutCachedLeft =803
+                            LayoutCachedTop =863
+                            LayoutCachedWidth =4862
+                            LayoutCachedHeight =1156
+                            RowStart =1
+                            RowEnd =1
+                            LayoutGroup =1
+                            GroupTable =1
+                        End
+                    End
                 End
             End
         End
