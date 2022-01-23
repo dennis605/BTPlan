@@ -16,13 +16,12 @@ Begin Form
     Width =10148
     DatasheetFontHeight =11
     ItemSuffix =498
-    Left =10178
-    Top =1935
-    Right =20325
-    Bottom =8228
+    Right =26880
+    Bottom =14235
     DatasheetGridlinesColor =15132391
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     OrderByOnLoad =0
@@ -291,7 +290,6 @@ Begin Form
                     Name ="txtVeranstaltungName"
                     ControlSource ="txtVeranstaltungName"
                     FontName ="Calibri"
-                    OnClick ="[Event Procedure]"
                     GroupTable =19
                     GridlineColor =10921638
 

@@ -13,143 +13,199 @@ Private Sub Bezeichnungsfeld172_Click()
 
 End Sub
 
+Private Sub checkboxesDeactivate()
+    Dim rsVeranstaltung As Recordset
+    Set rsVeranstaltung = CurrentDb.OpenRecordset("Select * from tblVeranstaltung", dbOpenDynaset)
 
+    Do While Not rsVeranstaltung.EOF
+        'rsVeranstaltung("inTagesplan") = True
+        'End With
+        'rsVeranstaltung.Update("inTagesplan") = True
+        With rsVeranstaltung
+            
+            .Edit
+            !inTagesplan = False
+            .Update
+        End With
+        rsVeranstaltung.MoveNext
+    Loop
+
+
+
+End Sub
 
 Private Sub Detailbereich_Click()
-''''''''''''''MsgBox "erggege" & idVeranstaltung
-'Dim parentForm As String
-'parentForm = Me.Parent.Name
-'Dim rs As Object
-'    Set rs = Forms(parentForm).Form.Recordset.Clone
-'    rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
-'    If Not rs.EOF Then Forms(parentForm).Form.Bookmark = rs.Bookmark
+    ''''''''''''''MsgBox "erggege" & idVeranstaltung
+    'Dim parentForm As String
+    'parentForm = Me.Parent.Name
+    'Dim rs As Object
+    '    Set rs = Forms(parentForm).Form.Recordset.Clone
+    '    rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
+    '    If Not rs.EOF Then Forms(parentForm).Form.Bookmark = rs.Bookmark
 
 End Sub
 
 Private Sub Form_Current()
-Me.AllowAdditions = False
-
-Dim parentForm As String
-
-parentForm = Me.Parent.Name
-
-Debug.Print (parentForm)
-'me.Parent.
-Dim db As DAO.Database
-Dim rsTagesplan As Object
-Dim tagesplanID As Integer
-Dim rsTagesplanJunction As Object
-Dim rsVeranstaltung As Object
-
-Set db = CurrentDb
-
-    Set rsTagesplan = Forms(parentForm).Form.Recordset.Clone
-    tagesplanID = rsTagesplan("idTagesplan")
-
-        Set rsTagesplanJunction = db.OpenRecordset("SELECT * FROM qryVeranstaltung_aktiv WHERE frkTagesplan = " & tagesplanID, dbOpenDynaset)
-        Set rsVeranstaltung = db.OpenRecordset("Select * from tblVeranstaltung", dbOpenDynaset)
-        
-        Do While Not rsVeranstaltung.EOF
-            'rsVeranstaltung("inTagesplan") = True
-            'End With
-            'rsVeranstaltung.Update("inTagesplan") = True
-            With rsVeranstaltung
-            
-            If rsVeranstaltung!idVeranstaltung = rsTagesplanJunction!frkVeranstaltung Then
-            
-            .Edit
-            !inTagesplan = True
-            .Update
-            
-            Else
-            .Edit
-            !inTagesplan = False
-            .Update
-            
-            End If
-            
-            
-            
-            End With
-            rsVeranstaltung.MoveNext
-            Loop
-        
-        
-        
-        
-        
-        
-        Set Me.Recordset = rsVeranstaltung
-        
-        
-        
-
-'
-
-'Debug.Print (Me.idVeranstaltung)
-''MsgBox (rsVeranstaltung("idVeranstaltung"))
-'
-'        Loop
-
-
-
-'MsgBox (Me.idVeranstaltung)
-
-'Do While Not rsTagesplanJunction.EOF
-''            With objListViewTagesplan.ListItems("a" & rst!idVeranstaltung)
-''                .Checked = Not IsNull(rst!idVeranstaltung)
-''            End With
-'
-'MsgBox (Me.idVeranstaltung)
-'            rsTagesplanJunction.MoveNext
-'        Loop
-
-
-
-
-
-'Debug.Print (parentForm)
+    
+'makeCheckbox
 
 End Sub
 
-Private Sub headerVeranstaltung_Click()
-
-DoCmd.SetOrderBy "txtVeranstaltungName ASC"
-
-
+Private Sub Form_Load()
+'makeCheckbox
 End Sub
 
 Private Sub headerVeranstaltungAnfang_Click()
 
-DoCmd.SetOrderBy "dateVeranstaltungAnfang ASC"
-'
+    DoCmd.SetOrderBy "dateVeranstaltungAnfang ASC"
+    '
 End Sub
 
+Private Sub headerVeranstaltung_Click()
+
+    DoCmd.SetOrderBy "txtVeranstaltungName ASC"
+
+
+End Sub
 
 Private Sub txtSearch_BeforeUpdate(Cancel As Integer)
-Dim parentForm As String
+    Dim parentForm As String
 
-parentForm = Me.Parent.Name
+    parentForm = Me.Parent.Name
 
-Dim strFilter As String
-     If Len(Me!txtSearch) > 0 Then
-         strFilter = "txtVeranstaltungName LIKE '" _
-             & Me!txtSearch & "'"
-         Me!parentForm.Form.Filter = strFilter
-         Me!parentForm.Form.FilterOn = True
-     Else
-         Me.Form.Filter = ""
-     End If
+    Dim strFilter As String
+    If Len(Me!txtSearch) > 0 Then
+        strFilter = "txtVeranstaltungName LIKE '" _
+            & Me!txtSearch & "'"
+        Me!parentForm.Form.Filter = strFilter
+        Me!parentForm.Form.FilterOn = True
+    Else
+        Me.Form.Filter = ""
+    End If
 End Sub
 
 Private Sub txtSearch_Click()
-Me.AllowEdits = True
+    Me.AllowEdits = True
 End Sub
 
-Private Sub txtVeranstaltungName_Click()
 
-Dim rs As Object
-    Set rs = Forms("frmVeranstaltung").Form.Recordset.Clone
-    rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
-    If Not rs.EOF Then Forms("frmVeranstaltung").Form.Bookmark = rs.Bookmark
+
+
+
+
+Public Sub makeCheckbox(id As Integer)
+
+Dim TagesID As Integer
+
+'TagesID = Me.
+
+Me.AllowAdditions = False
+
+    Dim parentForm As String
+
+    parentForm = Me.Parent.Name
+
+    Debug.Print (parentForm)
+    'me.Parent.
+    Dim db As DAO.Database
+    Dim rsTagesplan As Object
+    Dim tagesplanID As Integer
+    Dim rsTagesplanJunction As Recordset
+    Dim rsVeranstaltung As Recordset
+
+    Set db = CurrentDb
+
+    Set rsTagesplan = Forms(parentForm).Form.Recordset.Clone
+    
+    'MsgBox "ID Parent " & rsTagesplan("idTagesplan")
+    
+    'tagesplanID = Forms(parentForm).CurrentRecord
+    'tagesplanID = rsTagesplan("idTagesplan")
+    tagesplanID = id
+
+    Set rsTagesplanJunction = _
+        db.OpenRecordset("SELECT * FROM qryVeranstaltung_aktiv WHERE frkTagesplan = " _
+        & tagesplanID, dbOpenDynaset)
+    Set rsVeranstaltung = _
+        db.OpenRecordset("Select * from tblVeranstaltung", dbOpenDynaset)
+        
+    ' Erst mal alle checkboxen deaktivieren
+    
+    checkboxesDeactivate
+        
+    Do While Not rsVeranstaltung.EOF
+        
+        If rsVeranstaltung!idVeranstaltung = rsTagesplanJunction!frkVeranstaltung Then
+        
+        With rsVeranstaltung
+                .Edit
+                !inTagesplan = True
+                .Update
+    
+                End With
+        
+        End If
+        
+        Do While Not rsTagesplanJunction.EOF
+        
+        If rsVeranstaltung!idVeranstaltung = rsTagesplanJunction!frkVeranstaltung Then
+        
+        With rsVeranstaltung
+                .Edit
+                !inTagesplan = True
+                .Update
+    
+                End With
+        
+        End If
+        rsTagesplanJunction.MoveNext
+   
+        
+        Loop
+        
+        rsTagesplanJunction.MoveFirst
+        
+        
+        'Debug.Print rsTagesplanJunction!frkVeranstaltung
+        
+        
+        
+'        If rsVeranstaltung!idVeranstaltung = rsTagesplanJunction!frkVeranstaltung Then
+'
+'            Debug.Print "Treffer"
+'
+'
+'            rsTagesplanJunction.MoveNext
+'
+'        End If
+         rsVeranstaltung.MoveNext
+    Loop
+            
+            
+    '            If rsVeranstaltung!idVeranstaltung = rsTagesplanJunction!frkVeranstaltung Then
+    '
+    '            With rsVeranstaltung
+    '            .Edit
+    '            !inTagesplan = True
+    '            .Update
+    '
+    '            End With
+    '            rsTagesplanJunction.MoveNext
+    '            End If
+            
+            
+            
+        
+        
+        
+        
+        
+        
+    Set Me.Recordset = rsVeranstaltung
+        
+        
+        
+
+
+
 End Sub

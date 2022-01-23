@@ -9,8 +9,15 @@ Option Explicit
 Dim WithEvents objListViewTagesplan As MSComctlLib.ListView
 Attribute objListViewTagesplan.VB_VarHelpID = -1
 
+
+
 Private Sub Form_Current()
     KontrollkaestchenAktivieren
+    Call Form_akopiesubfrmVeranstaltung.makeCheckbox(Me.idTagesplan)
+   ' Me.Form.s
+   
+   
+    
 End Sub
 
 Private Sub Form_Load()
@@ -32,6 +39,18 @@ Private Sub Form_Load()
         
     End With
     ListViewFuellen
+    'Forms!akopiesubfrmVeranstaltung!Form.
+    
+    'Me.Sub
+    
+    'Forms!akoesubfrmVeranstaltung.makeCheckbox
+    'Forms!akopiefrmTagesplan!akopiesubfrmVeranstaltung.makeCheckbox
+    
+    
+    
+    'makeCheckbox
+    'Form.
+    
 End Sub
 
 Private Sub KontrollkaestchenAktivieren()
