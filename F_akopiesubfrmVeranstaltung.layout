@@ -1,0 +1,424 @@
+Version =21
+VersionRequired =20
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    AllowAdditions = NotDefault
+    AllowEdits = NotDefault
+    AllowDesignChanges = NotDefault
+    BorderStyle =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridY =10
+    Width =10148
+    DatasheetFontHeight =11
+    ItemSuffix =498
+    Left =10178
+    Top =1935
+    Right =20325
+    Bottom =8228
+    DatasheetGridlinesColor =15132391
+    OnCurrent ="[Event Procedure]"
+    DatasheetFontName ="Calibri"
+    AllowDatasheetView =0
+    FilterOnLoad =0
+    OrderByOnLoad =0
+    SplitFormSplitterBar =0
+    OrderByOnLoad =0
+    SplitFormSplitterBar =0
+    ShowPageMargins =0
+    DisplayOnSharePointSite =1
+    DatasheetAlternateBackColor =15921906
+    DatasheetGridlinesColor12 =0
+    FitToScreen =1
+    DatasheetBackThemeColorIndex =1
+    BorderThemeColorIndex =3
+    ThemeFontIndex =1
+    ForeThemeColorIndex =0
+    AlternateBackThemeColorIndex =1
+    AlternateBackShade =95.0
+    Begin
+        Begin Label
+            BackStyle =0
+            FontSize =11
+            FontName ="Segoe UI"
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =0
+            BorderTint =50.0
+            ForeThemeColorIndex =0
+            ForeTint =60.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            BorderLineStyle =0
+            SizeMode =3
+            PictureAlignment =2
+            Width =1701
+            Height =1701
+            BorderColor =16777215
+            GridlineColor =16777215
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin CheckBox
+            BorderLineStyle =0
+            LabelX =230
+            LabelY =-30
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin TextBox
+            AddColon = NotDefault
+            FELineBreak = NotDefault
+            BorderLineStyle =0
+            Width =1701
+            LabelX =-1701
+            FontSize =11
+            FontName ="Segoe UI"
+            AsianLineBreak =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ThemeFontIndex =1
+            ForeThemeColorIndex =0
+            ForeTint =75.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            Width =1701
+            LabelX =-1701
+            FontSize =11
+            FontName ="Segoe UI"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin EmptyCell
+            Height =240
+            GridlineColor =12632256
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin FormHeader
+            Height =402
+            BackColor =15064278
+            Name ="Formularkopf"
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =2
+            BackTint =20.0
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    Left =2850
+                    Top =30
+                    Width =1440
+                    Height =323
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="headerVeranstaltungAnfang"
+                    Caption ="Beginn"
+                    FontName ="Calibri"
+                    OnClick ="[Event Procedure]"
+                    GroupTable =11
+                    LeftPadding =0
+                    RightPadding =0
+                    GridlineColor =10921638
+                    LayoutCachedLeft =2850
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =4290
+                    LayoutCachedHeight =353
+                    ColumnStart =1
+                    ColumnEnd =1
+                    LayoutGroup =1
+                    GroupTable =11
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    Left =6600
+                    Top =38
+                    Width =3008
+                    Height =323
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="Bezeichnungsfeld176"
+                    Caption ="Veranstaltungsort"
+                    FontName ="Calibri"
+                    GroupTable =16
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6600
+                    LayoutCachedTop =38
+                    LayoutCachedWidth =9608
+                    LayoutCachedHeight =361
+                    LayoutGroup =7
+                    GroupTable =16
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    Left =705
+                    Top =30
+                    Width =2145
+                    Height =323
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="headerVeranstaltung"
+                    Caption ="Veranstaltung"
+                    FontName ="Calibri"
+                    OnClick ="[Event Procedure]"
+                    GroupTable =11
+                    LeftPadding =0
+                    RightPadding =0
+                    GridlineColor =10921638
+                    LayoutCachedLeft =705
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =2850
+                    LayoutCachedHeight =353
+                    LayoutGroup =1
+                    GroupTable =11
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    Left =4365
+                    Top =53
+                    Width =2228
+                    Height =323
+                    BorderColor =8355711
+                    ForeColor =6710886
+                    Name ="Bezeichnungsfeld174"
+                    Caption ="Ende"
+                    FontName ="Calibri"
+                    GroupTable =15
+                    GridlineColor =10921638
+                    LayoutCachedLeft =4365
+                    LayoutCachedTop =53
+                    LayoutCachedWidth =6593
+                    LayoutCachedHeight =376
+                    LayoutGroup =2
+                    BackThemeColorIndex =-1
+                    BorderThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
+                    GroupTable =15
+                End
+            End
+        End
+        Begin Section
+            Height =420
+            Name ="Detailbereich"
+            OnClick ="[Event Procedure]"
+            AlternateBackColor =16777215
+            AlternateBackThemeColorIndex =1
+            BackThemeColorIndex =1
+            Begin
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    IMESentenceMode =3
+                    Left =4455
+                    Top =30
+                    Width =2228
+                    Height =323
+                    TabIndex =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="dateVeranstaltungEnde"
+                    ControlSource ="dateVeranstaltungEnde"
+                    FontName ="Calibri"
+                    InputMask ="00:00;0;_"
+                    GroupTable =21
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4455
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =6683
+                    LayoutCachedHeight =353
+                    LayoutGroup =5
+                    GroupTable =21
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    IMESentenceMode =3
+                    Left =795
+                    Top =30
+                    Width =2145
+                    Height =323
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtVeranstaltungName"
+                    ControlSource ="txtVeranstaltungName"
+                    FontName ="Calibri"
+                    OnClick ="[Event Procedure]"
+                    GroupTable =19
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =795
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =2940
+                    LayoutCachedHeight =353
+                    LayoutGroup =3
+                    GroupTable =19
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    IMESentenceMode =3
+                    Left =2948
+                    Top =30
+                    Width =1440
+                    Height =323
+                    TabIndex =2
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="dateVeranstaltungAnfang"
+                    ControlSource ="dateVeranstaltungAnfang"
+                    FontName ="Calibri"
+                    InputMask ="00:00;0;_"
+                    GroupTable =20
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2948
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =4388
+                    LayoutCachedHeight =353
+                    LayoutGroup =4
+                    GroupTable =20
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    ListWidth =1440
+                    Left =6728
+                    Top =30
+                    Width =2903
+                    Height =323
+                    TabIndex =4
+                    BorderColor =10921638
+                    ForeColor =3484194
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"510\""
+                    Name ="Veranstaltungsort"
+                    ControlSource ="Veranstaltungsort"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; "
+                    ColumnWidths ="0;1442"
+                    FontName ="Calibri"
+                    BaseInfo ="\"SELECT [tblOrt].[ID], [tblOrt].[NameOrt] FROM tblOrt; \";\"tblOrt\";\"\";\"ID\""
+                        ";\"NameOrt\";\"PrimaryKey\""
+                    GroupTable =22
+                    GridlineColor =10921638
+
+                    ShowOnlyRowSourceValues =255
+                    LayoutCachedLeft =6728
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =9631
+                    LayoutCachedHeight =353
+                    LayoutGroup =6
+                    GroupTable =22
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextFontCharSet =177
+                    TextAlign =1
+                    TextFontFamily =0
+                    IMESentenceMode =3
+                    Left =428
+                    Top =56
+                    Width =336
+                    Height =293
+                    TabIndex =3
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="idVeranstaltung"
+                    ControlSource ="idVeranstaltung"
+                    FontName ="Calibri"
+                    LeftPadding =0
+                    TopPadding =0
+                    RightPadding =0
+                    BottomPadding =0
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =428
+                    LayoutCachedTop =56
+                    LayoutCachedWidth =764
+                    LayoutCachedHeight =349
+                End
+                Begin CheckBox
+                    OverlapFlags =85
+                    Left =38
+                    Top =90
+                    Width =285
+                    Height =210
+                    TabIndex =5
+                    BorderColor =10921638
+                    Name ="chkBox"
+                    ControlSource ="inTagesplan"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =38
+                    LayoutCachedTop =90
+                    LayoutCachedWidth =323
+                    LayoutCachedHeight =300
+                End
+            End
+        End
+        Begin FormFooter
+            Height =15
+            Name ="Formularfuﬂ"
+            AlternateBackThemeColorIndex =1
+            AlternateBackShade =95.0
+            BackThemeColorIndex =1
+        End
+    End
+End

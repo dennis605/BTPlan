@@ -7,9 +7,9 @@ Begin Form
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridY =10
-    Width =12514
+    Width =20243
     DatasheetFontHeight =11
-    ItemSuffix =20
+    ItemSuffix =22
     Right =27135
     Bottom =14235
     DatasheetGridlinesColor =15132391
@@ -345,6 +345,7 @@ Begin Form
             End
         End
         Begin Section
+            CanGrow = NotDefault
             Height =7370
             Name ="Detailbereich"
             AlternateBackColor =15921906
@@ -824,6 +825,42 @@ Begin Form
                             LayoutCachedTop =6915
                             LayoutCachedWidth =1928
                             LayoutCachedHeight =7235
+                        End
+                    End
+                End
+                Begin Subform
+                    OverlapFlags =215
+                    Left =9833
+                    Top =503
+                    Width =10410
+                    Height =6555
+                    TabIndex =5
+                    BorderColor =10921638
+                    Name ="akopiesubfrmVeranstaltung"
+                    SourceObject ="Form.akopiesubfrmVeranstaltung"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9833
+                    LayoutCachedTop =503
+                    LayoutCachedWidth =20243
+                    LayoutCachedHeight =7058
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =9833
+                            Top =263
+                            Width =2528
+                            Height =293
+                            BorderColor =8355711
+                            ForeColor =6710886
+                            Name ="akopiesubfrmVeranstaltung Beschriftung"
+                            Caption ="akopiesubfrmVeranstaltung"
+                            EventProcPrefix ="akopiesubfrmVeranstaltung_Beschriftung"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =9833
+                            LayoutCachedTop =263
+                            LayoutCachedWidth =12361
+                            LayoutCachedHeight =556
                         End
                     End
                 End
