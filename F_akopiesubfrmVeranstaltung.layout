@@ -16,9 +16,12 @@ Begin Form
     Width =10148
     DatasheetFontHeight =11
     ItemSuffix =498
-    Right =26880
-    Bottom =14235
+    Left =10178
+    Top =1935
+    Right =20325
+    Bottom =8228
     DatasheetGridlinesColor =15132391
+    RecordSource ="SELECT * FROM tblVeranstaltung; "
     OnCurrent ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     OnLoad ="[Event Procedure]"
@@ -402,6 +405,8 @@ Begin Form
                     BorderColor =10921638
                     Name ="chkBox"
                     ControlSource ="inTagesplan"
+                    OnGotFocus ="[Event Procedure]"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =38

@@ -34,7 +34,46 @@ Private Sub checkboxesDeactivate()
 
 End Sub
 
+Private Sub chkBox_Click()
+
+
+
+
+End Sub
+
+
+Private Sub chkBox_GotFocus()
+
+Dim db As DAO.Database
+   ' Dim lngVeransaltungID As Long
+    Set db = CurrentDb
+
+
+If Me!chkBox = True Then ' If checked.
+' hier prozedur was gemacht werden soll wenn aktiviert
+
+db.Execute "DELETE FROM tblVeranstaltungTagesplan WHERE frkTagesplan = " & idEvent & " AND frkVeranstaltung = " & idVeranstaltung, dbFailOnError
+
+Me.idVeranstaltung.SetFocus
+Me!chkBox = False
+
+Else
+ ' hier prozedur was gemacht werden soll wenn deaktiviert
+ db.Execute "INSERT INTO tblVeranstaltungTagesplan(frkTagesplan, frkVeranstaltung) VALUES(" & idEvent & ", " & idVeranstaltung & ")", dbFailOnError
+
+ 
+Me.idVeranstaltung.SetFocus
+Me!chkBox = True
+ End If
+
+End Sub
+
 Private Sub Detailbereich_Click()
+
+
+
+
+
     ''''''''''''''MsgBox "erggege" & idVeranstaltung
     'Dim parentForm As String
     'parentForm = Me.Parent.Name
@@ -42,6 +81,7 @@ Private Sub Detailbereich_Click()
     '    Set rs = Forms(parentForm).Form.Recordset.Clone
     '    rs.FindFirst "[idVeranstaltung] = " & Me!idVeranstaltung
     '    If Not rs.EOF Then Forms(parentForm).Form.Bookmark = rs.Bookmark
+
 
 End Sub
 
@@ -93,9 +133,10 @@ End Sub
 
 
 
-Public Sub makeCheckbox(id As Integer)
+Public Sub makeCheckbox(ID As Integer)
 
 Dim TagesID As Integer
+idEvent = ID
 
 'TagesID = Me.
 
@@ -121,7 +162,7 @@ Me.AllowAdditions = False
     
     'tagesplanID = Forms(parentForm).CurrentRecord
     'tagesplanID = rsTagesplan("idTagesplan")
-    tagesplanID = id
+    tagesplanID = ID
 
     Set rsTagesplanJunction = _
         db.OpenRecordset("SELECT * FROM qryVeranstaltung_aktiv WHERE frkTagesplan = " _

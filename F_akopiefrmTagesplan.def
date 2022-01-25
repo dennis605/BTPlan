@@ -13,14 +13,18 @@ Attribute objListViewTagesplan.VB_VarHelpID = -1
 
 Private Sub Form_Current()
     KontrollkaestchenAktivieren
+    
+    ' Funktion um Update in Subform zu Triggern
     Call Form_akopiesubfrmVeranstaltung.makeCheckbox(Me.idTagesplan)
    ' Me.Form.s
    
-   
+   ' Current wieder im Durchgeführt
+   'MsgBox "Current"
     
 End Sub
 
 Private Sub Form_Load()
+
     Set objListViewTagesplan = Me.ctlListViewTagesplan.Object
     With objListViewTagesplan
         .Arrange = lvwAutoLeft
